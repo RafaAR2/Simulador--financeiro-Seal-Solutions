@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="text-align: center;">
+    <h1>Calculadora Seal Solutions</h1>
+    <h3>Informe a quantidade de tomates que será transportado?</h3>
+    <input  id="inp_qntTomates"><br>
+    <span style="color: grey;">em (Kg)</span>
+    <h3>Informe o valor do Quilo?</h3>
+    <input id="inp_valorkg">
+    <h3>Informe a distancia do transporte?</h3>
+    <input id="inp_transporte"><button onclick="calculoValores()">Orçamento</button><br>
+    <span style="color: grey;">em (Km)</span> 
+    <div id="div_resposta"></div>
+</body>
+</html>
+
+
+<script>
+    function calculoValores() {
+        var qntTomate = Number(inp_qntTomates.value)
+        var preçoKg = Number(inp_valorkg.value)
+        var distanica = Number(inp_transporte.value)
+        var kmRodado = 8.82
+        var perdaTrajeto = qntTomate * 0.05
+        var tarifa_por_peso = 3 * qntTomate
+        // var semNossoProduto =
+        // var comNossoProduto =
+        div_resposta.innerHTML = `O seu gasto normal com o transporte será de R$${tarifa_por_peso + (kmRodado * distanica)} com uma perda de 5% dos tomates (${perdaTrajeto} Kg). <br> Com os nossos serviços Essas perdas serão reduzidas a 1% (${qntTomate * 0.01} Kg).`
+    }
+</script>
